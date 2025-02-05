@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Slider Moderne</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .gradient-border {
+      position: relative;
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1px; /* Pour le dégradé */
+    }
+
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      background: linear-gradient(45deg, #6EE7B7, #3B82F6, #9333EA);
+      border-radius: 1.5rem;
+      z-index: -1;
+      animation: rotate 4s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+  <div class="swiper-container w-full max-w-4xl px-4">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="gradient-border p-6 rounded-3xl shadow-lg">
+          <div class="bg-gray-800 p-8 rounded-2xl">
+            <h2 class="text-2xl font-bold text-white">Titre de la carte 1</h2>
+            <p class="mt-4 text-gray-300">Description de la carte 1. Ceci est un exemple de texte pour remplir la carte.</p>
+            <button class="mt-6 px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:opacity-90 transition-opacity">
+              En savoir plus
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="gradient-border p-6 rounded-3xl shadow-lg">
+          <div class="bg-gray-800 p-8 rounded-2xl">
+            <h2 class="text-2xl font-bold text-white">Titre de la carte 2</h2>
+            <p class="mt-4 text-gray-300">Description de la carte 2. Ceci est un exemple de texte pour remplir la carte.</p>
+            <button class="mt-6 px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:opacity-90 transition-opacity">
+              En savoir plus
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="gradient-border p-6 rounded-3xl shadow-lg">
+          <div class="bg-gray-800 p-8 rounded-2xl">
+            <h2 class="text-2xl font-bold text-white">Titre de la carte 3</h2>
+            <p class="mt-4 text-gray-300">Description de la carte 3. Ceci est un exemple de texte pour remplir la carte.</p>
+            <button class="mt-6 px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:opacity-90 transition-opacity">
+              En savoir plus
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination mt-8"></div>
+
+    <!-- Navigation -->
+    <div class="swiper-button-next text-white"></div>
+    <div class="swiper-button-prev text-white"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      spaceBetween: 30,
+      effect: 'slide',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+  </script>
+</body>
+</html>
